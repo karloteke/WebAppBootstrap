@@ -39,8 +39,9 @@
               <p class="card-text"><%= customer.getFirstName() %> <%= customer.getLastName() %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                 <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-secondary">Ver detalles del cliente</a>
+                 <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del cliente</a>
                  <a href="edit-customer.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-secondary">Editar cliente</a>
+                 <a href="remove-customer?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
                  <small class="text-muted"><%= customer.getPhone() %></small>
                   </div>

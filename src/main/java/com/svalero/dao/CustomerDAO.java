@@ -19,4 +19,7 @@ public interface CustomerDAO {
     @SqlQuery("SELECT * FROM customers WHERE customer_id = ?")
     @UseRowMapper(CustomerMapper.class)
     Customer getCustomer(int customer_id);
+
+    @SqlUpdate("DELETE FROM customers WHERE customer_id = ?")
+    void removeCustomer(int customer_id);
 }
