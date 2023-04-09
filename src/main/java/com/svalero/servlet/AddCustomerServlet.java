@@ -27,7 +27,7 @@ public class AddCustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String filePath = "/Users/Jesus/Desktop/apache-tomcat-10.1.7/webapps/tienda_data";
+        String imagePath = request.getServletContext().getInitParameter("image-path");
 
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -35,12 +35,16 @@ public class AddCustomerServlet extends HttpServlet {
         String phone = request.getParameter("phone");
 
         try {
-            // Subir la imagen a la carpeta tienda_data
+            // Subir la imagen a la carpeta taller_data
             Part imagePart = request.getPart("image");
-            String fileName = UUID.randomUUID() + ".jpg";
-            InputStream fileStream = imagePart.getInputStream();
-            Files.copy(fileStream, Path.of(filePath + File.separator + fileName));
-
+            String fileName;
+            if (imagePart.getSize() == 0) {
+                fileName = "no_image.jpg";
+            } else {
+                fileName = UUID.randomUUID() + ".jpg";
+                InputStream fileStream = imagePart.getInputStream();
+                Files.copy(fileStream, Path.of(imagePath + File.separator + fileName));
+            }
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
             Database.jdbi.withExtension(CustomerDAO.class, dao -> {
