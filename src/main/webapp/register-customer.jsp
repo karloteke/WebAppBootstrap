@@ -1,5 +1,5 @@
 <%@include file="includes/header.jsp"%>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         $("form").on("submit", function(event) {
             event.preventDefault();
@@ -9,7 +9,7 @@
             });
         });
     });
-</script>
+</script>-->
 
 <main>
 <div class="container">
@@ -20,7 +20,7 @@
         <li class="breadcrumb-item active" aria-current="page">Registrar cliente</li>
       </ol>
     </nav>
-    <form class="row g-3" action= "add-customer" method= "post">
+     <form class="row g-3" method = "post" action = "add-customer" enctype="multipart/form-data">
         <div class="col-md-6">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="firstName" >
@@ -37,8 +37,12 @@
             <label for="teléfono" class="form-label">Teléfono</label>
             <input type="text" class="form-control" id="teléfono" name = "phone">
         </div>
+         <div class="col-md-6">
+              <label for="image" class="form-label">Imagen</label>
+              <input type="file" class="form-control" id="image" name="image">
+            </div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Registrar cliente</button>
+            <input type="submit" value = "Registrar cliente"/>
          </div>
     </form>
     <br/>

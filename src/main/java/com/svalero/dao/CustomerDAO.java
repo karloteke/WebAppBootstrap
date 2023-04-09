@@ -13,8 +13,8 @@ public interface CustomerDAO {
     @UseRowMapper(CustomerMapper.class)
     List<Customer> getCustomers();
 
-    @SqlUpdate("INSERT INTO customers (first_name, last_name, adress, phone) VALUES (?, ?, ?, ?)")
-    void addCustomer(String firstName, String lastName, String adress, String phone);
+    @SqlUpdate("INSERT INTO customers (first_name, last_name, adress, phone, image) VALUES (?, ?, ?, ?, ?)")
+    void addCustomer(String firstName, String lastName, String adress, String phone, String image);
 
     @SqlQuery("SELECT * FROM customers WHERE customer_id = ?")
     @UseRowMapper(CustomerMapper.class)

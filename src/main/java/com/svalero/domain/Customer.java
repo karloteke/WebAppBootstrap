@@ -21,6 +21,8 @@ public class Customer {
     private String adress;
     @NonNull
     private String phone;
+    @NonNull
+    private String image;
 
     //Relaciono los pedidos dentro de clientes
     //private List<MysqlxCrud.Order> orders;
