@@ -19,9 +19,9 @@ import java.nio.file.Path;
 import java.util.UUID;
 
 
-@WebServlet("/add-customer")
+@WebServlet("/edit-customer")
 @MultipartConfig
-public class AddCustomerServlet extends HttpServlet {
+public class AddEditCustomerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,6 +33,12 @@ public class AddCustomerServlet extends HttpServlet {
         String lastName = request.getParameter("lastName");
         String adress = request.getParameter("adress");
         String phone = request.getParameter("phone");
+
+        int id = 0;
+        String action = request.getParameter("action");
+        if (action.equals("edit")) {
+            id = Integer.parseInt(request.getParameter("id"));
+        }
 
         try {
             // Subir la imagen a la carpeta taller_data
@@ -47,10 +53,19 @@ public class AddCustomerServlet extends HttpServlet {
             }
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
-            Database.jdbi.withExtension(CustomerDAO.class, dao -> {
-                dao.addCustomer(firstName, lastName, adress, phone, fileName);
-                return null;
-            });
+
+            if (action.equals("edit")) {
+                int customerId = id;
+                Database.jdbi.withExtension(CustomerDAO.class, dao -> {
+                    dao.editCustomer(firstName, lastName, adress, phone, fileName, customerId);
+                    return null;
+                });
+            } else {
+                Database.jdbi.withExtension(CustomerDAO.class, dao -> {
+                    dao.addCustomer(firstName, lastName, adress, phone, fileName);
+                    return null;
+                });
+            }
 
             out.println("<div class='alert alert-success' role='alert'>Cliente registrado correctamente</div>");
         } catch (ClassNotFoundException cnfe) {

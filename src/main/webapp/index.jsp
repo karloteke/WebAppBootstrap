@@ -15,7 +15,7 @@
         <h1 class="fw-light">Aplicación para gestión de la tienda de maquillaje</h1>
         <p class="lead text-body-secondary">Gestiona tu tienda de maquillaje.</p>
         <p>
-          <a href="register-customer.jsp" class="btn btn-outline-info">Registrar nuevo cliente</a>
+          <a href="customer-form.jsp?action-register" class="btn btn-outline-info">Registrar nuevo cliente</a>
           <a href="register-order.jsp" class="btn btn-outline-info">Registrar nuevo pedido</a>
         </p>
       </div>
@@ -40,7 +40,8 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                  <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del cliente</a>
-                 <a href="edit-customer.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-secondary">Editar cliente</a>
+                  <a href="customer-form.jsp?id=<%= customer.getCustomer_id() %>&action=edit&firstName=<%= customer.getFirstName() %>&lastName=<%= customer.getLastName() %>&adress=<%= customer.getAdress() %>&phone=<%= customer.getPhone() %>"
+                                      class="btn btn-sm btn-outline-secondary">Editar cliente</a>
                  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
                  <small class="text-muted"><%= customer.getPhone() %></small>
