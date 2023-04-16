@@ -5,6 +5,7 @@ import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface CustomerDAO {
@@ -19,9 +20,11 @@ public interface CustomerDAO {
     @SqlQuery("SELECT * FROM customers WHERE customer_id = ?")
     @UseRowMapper(CustomerMapper.class)
     Customer getCustomer(int customer_id);
+
     @SqlUpdate("DELETE FROM customers WHERE customer_id = ?")
     void removeCustomer(int customer_id);
 
     @SqlUpdate("UPDATE customers SET first_name = ?, last_name = ?, adress = ?, phone = ?, image = ? WHERE customer_id = ?")
     void editCustomer(String firstName, String lastName, String adress, String phone, String image, int id);
+
 }

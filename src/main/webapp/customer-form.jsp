@@ -1,3 +1,4 @@
+
 <%@include file="includes/header.jsp"%>
 <!--<script type="text/javascript">
     $(document).ready(function() {
@@ -24,6 +25,12 @@
 %>
 
 <main>
+<!doc type html>
+<html lang="es">
+  <head>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <div class="container">
     <br/>
     <nav aria-label="breadcrumb">
@@ -62,7 +69,6 @@
         <%
         }
         %>
-
         <div class="col-12">
             <input type="submit" value="<%= action %>"/>
         </div>

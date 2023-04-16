@@ -1,14 +1,10 @@
 package com.svalero.domain;
 
-import com.mysql.cj.x.protobuf.MysqlxCrud;
 import lombok.*;
-
-import java.util.List;
 
 @Data
 @RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 public class Customer {
 
@@ -23,8 +19,4 @@ public class Customer {
     private String phone;
     @NonNull
     private String image;
-
-    //Relaciono los pedidos dentro de clientes
-    //private List<MysqlxCrud.Order> orders;
-
 }

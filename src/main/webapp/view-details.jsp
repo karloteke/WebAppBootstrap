@@ -23,6 +23,7 @@
     </div>
 </div>
 
+
 <!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
 <nav aria-label="Page navigation example">
   <ul class="pagination">

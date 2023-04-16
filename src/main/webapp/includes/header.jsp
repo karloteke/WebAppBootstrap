@@ -1,8 +1,11 @@
+
 <!doc type html>
 <html lang="es">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
     <title>Tienda WebApp</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
@@ -78,9 +81,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Gestión de tienda de maquillaje</h4>
-           <p class="text-body-secondary">SOMOS UNA MARCA JOVEN DE BELLEZA CON SEDE EN ZARAGOZA, ESPAÑA. CREEMOS QUE EL MAQUILLAJE DEBERÍA SER DIVERTIDO Y SIN COMPLICACIONES.
-            Nuestros productos son veganos y cruelty-free</p>
+          <h4 class="text-white">Gestión tienda de maquillaje</h4>
+            <p class="text-white">SOMOS UNA MARCA JOVEN DE BELLEZA CON SEDE EN ZARAGOZA, ESPAÑA. CREEMOS QUE EL MAQUILLAJE DEBERÍA SER DIVERTIDO Y SIN COMPLICACIONES.Nuestros productos son veganos y cruelty-free</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contacto</h4>
