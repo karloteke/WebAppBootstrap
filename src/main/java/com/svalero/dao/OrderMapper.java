@@ -1,6 +1,5 @@
 package com.svalero.dao;
 
-import com.svalero.domain.Customer;
 import com.svalero.domain.Order;
 import com.svalero.util.DateUtils;
 import org.jdbi.v3.core.mapper.RowMapper;

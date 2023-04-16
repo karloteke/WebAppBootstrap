@@ -1,6 +1,5 @@
 package com.svalero.dao;
 
-import com.svalero.domain.Customer;
 import com.svalero.domain.Product;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
@@ -15,7 +14,7 @@ public interface ProductDAO {
     List<Product> getProducts();
 
     @SqlUpdate("INSERT INTO products (name, description, price, image) VALUES (?, ?, ?, ?)")
-    void addProduct(String name, String description, int price, String image);
+    void addProduct(String name, String description, Double price, String image);
 
     @SqlQuery("SELECT * FROM products WHERE product_id = ?")
     @UseRowMapper(ProductMapper.class)
@@ -25,6 +24,6 @@ public interface ProductDAO {
     void removeProduct(int product_id);
 
     @SqlUpdate("UPDATE products SET name = ?, description = ?,image = ? WHERE product_id = ?")
-    void editProduct(String name, String description, String image, int product_id);
+    void editProduct(String name, String description, String image, String fileName, int product_id);
 
 }

@@ -33,9 +33,9 @@
                      </div>
                  </form>
         </br>
-        <h1 class="fw-light">Gestión de clientes</h1>
+        <h1 class="fw-light">Gestión de productos</h1>
         <p>
-          <a href="customer-form.jsp?action-register" class="btn btn-outline-info">Registrar nuevo cliente</a>
+          <a href="product-form.jsp" class="btn btn-outline-info">Registrar nuevo producto</a>
         </p>
       </div>
     </div>

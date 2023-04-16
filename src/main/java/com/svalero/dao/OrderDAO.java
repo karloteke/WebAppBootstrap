@@ -1,6 +1,5 @@
 package com.svalero.dao;
 
-import com.svalero.domain.Customer;
 import com.svalero.domain.Order;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
@@ -10,17 +9,16 @@ import java.sql.Date;
 import java.util.List;
 
 public interface OrderDAO {
-
-    @SqlQuery("SELECT * FROM orders WHERE customer_id = ?")
+    @SqlQuery("SELECT * FROM orders")
     @UseRowMapper(OrderMapper.class)
-    List<Order> getOrdersByCustomerId(int customer_id);
+    List<Order> getOrders();
 
     @SqlUpdate("INSERT INTO orders (customer_id,date) VALUES (?, ?)")
     void addOrder(int customer_id, Date date);
 
     @SqlQuery("SELECT * FROM orders WHERE order_id = ?")
     @UseRowMapper(CustomerMapper.class)
-    Customer getOrder(int order_id);
+    Order getOrder(int order_id);
 
     @SqlUpdate("DELETE FROM orders WHERE order_id = ?")
     void removeOrder(int order_id);

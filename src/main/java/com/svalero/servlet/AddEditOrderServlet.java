@@ -1,7 +1,5 @@
 package com.svalero.servlet;
 
-
-import com.svalero.dao.CustomerDAO;
 import com.svalero.dao.Database;
 import com.svalero.dao.OrderDAO;
 import com.svalero.util.DateUtils;
@@ -11,16 +9,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDate;
-import java.util.UUID;
+
 
 @WebServlet("/edit-order")
 @MultipartConfig
@@ -61,7 +53,7 @@ public class AddEditOrderServlet extends HttpServlet {
             // TODO Mientras no corregimos el javascript para envio asincrono podemos redirigir al index
             response.sendRedirect("index.jsp");
 
-            out.println("<div class='alert alert-success' role='alert'>Cliente registrado correctamente</div>");
+            out.println("<div class='alert alert-success' role='alert'>Pedido registrado correctamente</div>");
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         }

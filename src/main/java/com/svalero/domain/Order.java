@@ -15,7 +15,7 @@ public class Order {
    @NonNull
    private String customer_id;
    @NonNull
-   private LocalDate registrationDate;
+   private LocalDate date;
 
    public Order(int order_id, int customer_id, LocalDate date) {
    }
