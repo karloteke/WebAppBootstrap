@@ -9,16 +9,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.LocalDate;
-import java.util.UUID;
+
 
 
 @WebServlet("/edit-order")
@@ -31,7 +26,7 @@ public class AddEditOrderServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         int customer_id = Integer.parseInt(request.getParameter("customer_id"));
-        int product_id = Integer.parseInt(request.getParameter("customer_id"));
+        int product_id = Integer.parseInt(request.getParameter("product_id"));
         int amount = Integer.parseInt(request.getParameter("amount"));
 
         int id = 0;
@@ -60,7 +55,7 @@ public class AddEditOrderServlet extends HttpServlet {
             // TODO Mientras no corregimos el javascript para envio asincrono podemos redirigir al index
             response.sendRedirect("orders.jsp");
 
-            out.println("<div class='alert alert-success' role='alert'>Vehiculo guardado correctamente</div>");
+            out.println("<div class='alert alert-success' role='alert'>Pedido guardado correctamente</div>");
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         }

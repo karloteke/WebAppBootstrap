@@ -2,6 +2,8 @@
 <%@ page import="com.svalero.dao.Database" %>
 <%@ page import="com.svalero.dao.OrderDAO" %>
 <%@ page import="com.svalero.domain.Order" %>
+<%@ page import="com.svalero.dao.ProductDAO" %>
+<%@ page import="com.svalero.domain.Product" %>
 
 <%@include file="includes/header.jsp"%>
 <main>
@@ -14,11 +16,12 @@
 
 
 <div class="container">
-    <div class="card mb-3">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card mb-3 style background-color" >
          <div class="card-body">
-             <h5 class="card-title"><%= order.getProduct_id() %><%= order.getAmount() %></h5>
-             <p class="card-text"><small class="text-muted"><%= order.getCustomer_id() %></small></p>
+             <h5 class="card-title">Pedido: <%= order.getOrder_id() %></h5>
+             <p class="card-text">Id cliente: <%= order.getCustomer_id() %></p>
+             <p class="card-text">Id producto: <%= order.getProduct_id() %></p>
+             <p class="card-text">Cantidad: <%= order.getAmount() %></p>
            </div>
     </div>
 </div>

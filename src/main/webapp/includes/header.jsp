@@ -70,6 +70,17 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+    .table-responsive {
+        width: 100%;
+    }
+    .style{
+    width: 500px;
+    margin: 25px auto;
+    }
+    .background-color{
+     background-color: violet;
+    }
+
     </style>
 
 

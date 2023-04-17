@@ -13,8 +13,8 @@
 %>
 
 <div class="container">
-    <div class="card mb-3">
-      <img src="..." class="card-img-top" alt="...">
+    <div class="card mb-3 style">
+      <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>
       <div class="card-body">
         <h5 class="card-title"><%= customer.getFirstName() %> <%= customer.getLastName() %></h5>
         <p class="card-text"><%= customer.getAdress() %></p>

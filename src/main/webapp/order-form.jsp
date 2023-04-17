@@ -1,16 +1,6 @@
 
 <%@include file="includes/header.jsp"%>
-<!--<script type="text/javascript">
-    $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            event.preventDefault();
-            var formValue = $(this).serialize();
-            $.post("add-customer", formValue, function(data) {
-                $("#result").html(data);
-            });
-        });
-    });
-</script>-->
+
 
 <%
     String action = request.getParameter("action");
@@ -63,6 +53,8 @@
     <div id="result"></div>
 </div>
 </main>
+
+
 <%@include file="includes/footer.jsp"%>
 
 

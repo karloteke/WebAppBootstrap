@@ -39,7 +39,7 @@
         </br>
         <h1 class="fw-light">Gestión de productos</h1>
         <p>
-          <a href="product-form.jsp?action=register" class="btn btn-outline-info">Registrar nuevo producto</a>
+          <a href="product-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo producto</a>
         </p>
       </div>
     </div>
@@ -68,7 +68,7 @@
                      class="btn btn-sm btn-outline-secondary">Editar producto</a>
                   <a href="remove-product?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
-                 <small class="text-muted"><%= product.getPrice() %></small>
+                 <small class="text-muted"><%= product.getPrice() %>€</small>
                   </div>
                  </div>
                </div>

@@ -33,7 +33,7 @@
         </br>
         <h1 class="fw-light">Gestión de pedidos</h1>
         <p>
-          <a href="order-form.jsp?action=register" class="btn btn-outline-info">Registrar nuevo pedido</a>
+          <a href="order-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo pedido</a>
         </p>
       </div>
     </div>
@@ -47,31 +47,50 @@
               Class.forName("com.mysql.cj.jdbc.Driver");
               Database.connect();
               List<Order> orderList = Database.jdbi.withExtension(OrderDAO.class, OrderDAO::getOrders);
-              for (Order order : orderList) {
            %>
 
-        <div class="col">
-          <div class="card shadow-sm">
-            <div class="card-body">
-             <p class="card-text">Id producto: <%= order.getProduct_id() %> Cantidad: <%= order.getAmount() %></p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del pedido</a>
-                  <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>&product_id=<%= order.getProduct_id() %>&amount=<%= order.getAmount() %>"
-                     class="btn btn-sm btn-outline-secondary">Editar pedido</a>
-                  <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
-                </div>
-                 <small class="text-muted">Cliente: <%= order.getCustomer_id() %></small>
-                  </div>
-                 </div>
-               </div>
-             </div>
-             <%
-                }
-             %>
-           </div>
-         </div>
-       </div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thread>
+            <tr>
+                <th>Id pedido</th>
+                <th>Id cliente</th>
+                <th>Id producto</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+        </thread>
+        <body>
+            <% for (Order order : orderList) { %>
+                <tr>
+                    <td><%= order.getOrder_id() %></td>
+                    <td><%= order.getCustomer_id() %></td>
+                    <td><%= order.getProduct_id() %></td>
+                    <td><%= order.getAmount() %></td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Detalles</a>
+                            <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>&product_id=<%= order.getProduct_id() %>&amount=<%= order.getAmount() %>" class="btn btn-sm btn-outline-secondary">Editar</a>
+                            <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            <% } %>
+        </body>
+    </table>
+</div>
+</br>
+
+<!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
 
 </main>
 

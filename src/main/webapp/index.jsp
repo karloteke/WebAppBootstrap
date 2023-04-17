@@ -35,7 +35,7 @@
         </br>
         <h1 class="fw-light">Gestión de clientes</h1>
         <p>
-          <a href="customer-form.jsp?action=register" class="btn btn-outline-info">Registrar nuevo cliente</a>
+          <a href="customer-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo cliente</a>
         </p>
       </div>
     </div>
