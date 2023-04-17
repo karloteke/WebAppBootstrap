@@ -16,6 +16,10 @@
     String action = request.getParameter("action");
     String customer_id = request.getParameter("customer_id");
     if (customer_id == null) customer_id = "";
+    String product_id = request.getParameter("product_id");
+    if (product_id == null) product_id = "";
+    String amount = request.getParameter("amount");
+    if (amount == null) amount = "";
 
 %>
 
@@ -33,10 +37,14 @@
              <label for="id" class="form-label">Id cliente</label>
              <input type="text" class="form-control" id="id" name="customer_id" value='<%= customer_id %>'>
        </div>
-      <div class="col-md-6">
-               <label for="image" class="form-label">Imagen</label>
-               <input type="file" class="form-control" id="image" name="image">
-           </div>
+       <div class="col-md-6">
+            <label for="id" class="form-label">Id producto</label>
+            <input type="text" class="form-control" id="id" name="product_id" value='<%= product_id %>'>
+      </div>
+       <div class="col-md-6">
+            <label for="amount" class="form-label">Cantidad</label>
+            <input type="text" class="form-control" id="id" name="amount" value='<%= amount %>'>
+      </div>
         <input type="hidden" name="action" value="<%= action %>"/>
         <%
         if (action != null && action.equals("edit")) {

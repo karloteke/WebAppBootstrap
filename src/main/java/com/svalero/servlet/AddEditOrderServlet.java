@@ -30,8 +30,9 @@ public class AddEditOrderServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String imagePath = request.getServletContext().getInitParameter("image-path");
-        String customer_id = request.getParameter("customer_id");
+        int customer_id = Integer.parseInt(request.getParameter("customer_id"));
+        int product_id = Integer.parseInt(request.getParameter("customer_id"));
+        int amount = Integer.parseInt(request.getParameter("amount"));
 
         int id = 0;
         String action = request.getParameter("action");
@@ -40,28 +41,19 @@ public class AddEditOrderServlet extends HttpServlet {
         }
 
         try {
-            // Subir la imagen a la carpeta taller_data
-            Part imagePart = request.getPart("image");
-            String fileName;
-            if (imagePart.getSize() == 0) {
-                fileName = "no_image.jpg";
-            } else {
-                fileName = UUID.randomUUID() + ".jpg";
-                InputStream fileStream = imagePart.getInputStream();
-                Files.copy(fileStream, Path.of(imagePath + File.separator + fileName));
-            }
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 
             if (action.equals("edit")) {
                 int orderId = id;
                 Database.jdbi.withExtension(OrderDAO.class, dao -> {
-                    dao.editOrder(Integer.parseInt(customer_id), fileName, orderId);
+                    dao.editOrder(customer_id, product_id, amount, orderId);
                     return null;
                 });
             } else {
                 Database.jdbi.withExtension(OrderDAO.class, dao -> {
-                    dao.addOrder(Integer.parseInt(customer_id), fileName, DateUtils.getDate(LocalDate.now()));
+                    dao.addOrder(customer_id, product_id, amount, DateUtils.getDate(LocalDate.now()));
                     return null;
                 });
             }

@@ -52,17 +52,16 @@
 
         <div class="col">
           <div class="card shadow-sm">
-           <img src="../tienda_data/<%= order.getImage() %>" class="bd-placeholder-img card-img-top"/>
             <div class="card-body">
-            <small class="text-muted">Fecha de registro<%= order.getDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) %></small>
+             <p class="card-text">Id producto: <%= order.getProduct_id() %> Cantidad: <%= order.getAmount() %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del pedido</a>
-                  <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>"
+                  <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>&product_id=<%= order.getProduct_id() %>&amount=<%= order.getAmount() %>"
                      class="btn btn-sm btn-outline-secondary">Editar pedido</a>
                   <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
-                 <small class="text-muted"><%= order.getOrder_id() %></small>
+                 <small class="text-muted">Cliente: <%= order.getCustomer_id() %></small>
                   </div>
                  </div>
                </div>

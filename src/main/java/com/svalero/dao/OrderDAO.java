@@ -14,8 +14,8 @@ public interface OrderDAO {
     List<Order> getOrders();
 
 
-    @SqlUpdate("INSERT INTO orders (customer_id, image, date) VALUES (?, ?, ?)")
-    void addOrder(int customer_id,String image, Date Date);
+    @SqlUpdate("INSERT INTO orders (customer_id, product_id, amount, date) VALUES (?, ?, ?, ?)")
+    void addOrder(int customer_id, int product_id, int amount, Date Date);
 
     @SqlQuery("SELECT * FROM orders WHERE order_id = ?")
     @UseRowMapper(OrderMapper.class)
@@ -24,8 +24,8 @@ public interface OrderDAO {
     @SqlUpdate("DELETE FROM orders WHERE order_id = ?")
     void removeOrder(int order_id);
 
-    @SqlUpdate("UPDATE orders SET customer_id = ?, image = ? WHERE order_id = ?")
-    void editOrder(int customer_id, String image, int order_id);
+    @SqlUpdate("UPDATE orders SET customer_id = ?, product_id = ?, amount = ? WHERE order_id = ?")
+    void editOrder(int customer_id, int product_id, int amount, int order_id);
 
 
 }

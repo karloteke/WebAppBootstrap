@@ -15,7 +15,9 @@ public class Order {
    @NonNull
    private int customer_id;
    @NonNull
-   private String image;
+   private int product_id;
+   @NonNull
+   private int amount;
    @NonNull
    private LocalDate date;
 
