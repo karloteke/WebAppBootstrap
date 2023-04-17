@@ -15,6 +15,8 @@ public class Order {
    @NonNull
    private int customer_id;
    @NonNull
+   private String image;
+   @NonNull
    private LocalDate date;
 
 }

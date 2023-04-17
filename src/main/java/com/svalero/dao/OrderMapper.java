@@ -14,6 +14,7 @@ public class OrderMapper implements RowMapper<Order> {
     public Order map(ResultSet rs, StatementContext ctx) throws SQLException {
         return new Order(rs.getInt("order_id"),
                 rs.getInt("customer_id"),
+                rs.getString("image"),
                 DateUtils.getLocalDate(rs.getDate("date"))
             );
     }

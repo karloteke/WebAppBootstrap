@@ -19,7 +19,7 @@ public class RemoveOrderServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        int id = Integer.parseInt(request.getParameter("order_id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

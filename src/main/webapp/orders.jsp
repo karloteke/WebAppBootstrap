@@ -1,8 +1,7 @@
 <%@ page import="com.svalero.dao.Database" %>
 <%@ page import="com.svalero.dao.OrderDAO" %>
 <%@ page import="com.svalero.domain.Order" %>
-<%@ page import="com.svalero.dao.CustomerDAO" %>
-<%@ page import="com.svalero.domain.Customer" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 
 <%@ page import="java.util.List" %>
@@ -53,8 +52,9 @@
 
         <div class="col">
           <div class="card shadow-sm">
+           <img src="../tienda_data/<%= order.getImage() %>" class="bd-placeholder-img card-img-top"/>
             <div class="card-body">
-            <p class="card-text"><%= order.getOrder_id() %></p>
+            <small class="text-muted">Fecha de registro<%= order.getDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) %></small>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del pedido</a>

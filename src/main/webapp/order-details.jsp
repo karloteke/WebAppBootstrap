@@ -2,8 +2,7 @@
 <%@ page import="com.svalero.dao.Database" %>
 <%@ page import="com.svalero.dao.OrderDAO" %>
 <%@ page import="com.svalero.domain.Order" %>
-<%@ page import="com.svalero.dao.CustomerDAO" %>
-<%@ page import="com.svalero.domain.Customer" %>
+
 <%@include file="includes/header.jsp"%>
 <main>
 <%
@@ -19,7 +18,7 @@
       <img src="..." class="card-img-top" alt="...">
          <div class="card-body">
              <h5 class="card-title"><%= order.getCustomer_id() %></h5>
-             <p class="card-text"><small class="text-muted"><%= order.getDate() %></small></p>
+             <p class="card-text"><small class="text-muted"><%= order.getOrder_id() %></small></p>
            </div>
     </div>
 </div>

@@ -33,6 +33,10 @@
              <label for="id" class="form-label">Id cliente</label>
              <input type="text" class="form-control" id="id" name="customer_id" value='<%= customer_id %>'>
        </div>
+      <div class="col-md-6">
+               <label for="image" class="form-label">Imagen</label>
+               <input type="file" class="form-control" id="image" name="image">
+           </div>
         <input type="hidden" name="action" value="<%= action %>"/>
         <%
         if (action != null && action.equals("edit")) {
