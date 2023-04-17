@@ -27,6 +27,7 @@ public class AddEditCustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
+        out.println("<head><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></head>");
         String imagePath = request.getServletContext().getInitParameter("image-path");
 
         String firstName = request.getParameter("firstName");
@@ -66,10 +67,12 @@ public class AddEditCustomerServlet extends HttpServlet {
                     return null;
                 });
             }
-            // TODO Mientras no corregimos el javascript para envio asincrono podemos redirigir al index
-            response.sendRedirect("index.jsp");
+            // Agregar HTML del botón de éxito y la función JavaScript que redirige a la página de clientes
+            out.println("<div class='alert alert-success text-center' role='alert'>Cliente guardado correctamente</div>");
+            out.println("<script>");
+            out.println("setTimeout(function(){ window.location.href='index.jsp'; }, 3000);");
+            out.println("</script>");
 
-            out.println("<div class='alert alert-success' role='alert'>Cliente registrado correctamente</div>");
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         }

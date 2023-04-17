@@ -13,7 +13,6 @@ public interface OrderDAO {
     @UseRowMapper(OrderMapper.class)
     List<Order> getOrders();
 
-
     @SqlUpdate("INSERT INTO orders (customer_id, product_id, amount, date) VALUES (?, ?, ?, ?)")
     void addOrder(int customer_id, int product_id, int amount, Date Date);
 
@@ -26,6 +25,5 @@ public interface OrderDAO {
 
     @SqlUpdate("UPDATE orders SET customer_id = ?, product_id = ?, amount = ? WHERE order_id = ?")
     void editOrder(int customer_id, int product_id, int amount, int order_id);
-
 
 }

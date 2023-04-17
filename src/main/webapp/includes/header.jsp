@@ -78,37 +78,16 @@
     margin: 25px auto;
     }
     .background-color{
-     background-color: violet;
+     background-color: thistle;
     }
-
     </style>
 
 
   </head>
   <body>
 
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Gestión tienda de maquillaje</h4>
-            <p class="text-white">SOMOS UNA MARCA JOVEN DE BELLEZA CON SEDE EN ZARAGOZA, ESPAÑA. CREEMOS QUE EL MAQUILLAJE DEBERÍA SER DIVERTIDO Y SIN COMPLICACIONES.Nuestros productos son veganos y cruelty-free</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contacto</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-   <div class="container-fluid">
+   <div class="container-fluid ">
      <a class="navbar-brand" href="#">Gestión tienda de maquillaje</a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>

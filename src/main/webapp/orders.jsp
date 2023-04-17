@@ -2,8 +2,6 @@
 <%@ page import="com.svalero.dao.OrderDAO" %>
 <%@ page import="com.svalero.domain.Order" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
-
-
 <%@ page import="java.util.List" %>
 
 <!–– Incluimos el header de la página (No va a cambiar) = header.jsp -->
@@ -25,6 +23,9 @@
                          <div class="col">
                              <input type="text" name="order_id" class="form-control" placeholder="Id pedido">
                          </div>
+                         <div class="col">
+                              <input type="text" name="amount" class="form-control" placeholder="Cantidad">
+                          </div>
                          <div class="col-auto">
                              <button type="submit" class="btn btn-primary">Buscar pedidos</button>
                          </div>
