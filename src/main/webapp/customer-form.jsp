@@ -62,7 +62,7 @@
         </div>
         <input type="hidden" name="action" value="<%= action %>"/>
         <%
-        if (action != null && action.equals("edit")) {
+        if (action.equals("edit")) {
             int id = Integer.parseInt(request.getParameter("id"));
         %>
             <input type="hidden" name="id" value="<%= id %>"/>

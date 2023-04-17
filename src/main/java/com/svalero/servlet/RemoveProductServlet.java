@@ -2,6 +2,7 @@ package com.svalero.servlet;
 
 import com.svalero.dao.Database;
 import com.svalero.dao.OrderDAO;
+import com.svalero.dao.ProductDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,17 +20,17 @@ public class RemoveProductServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        int id = Integer.parseInt(request.getParameter("product_id"));
+        int id = Integer.parseInt(request.getParameter("id"));
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 
-            Database.jdbi.withExtension(OrderDAO.class, dao -> {
-                dao.removeOrder(id);
+            Database.jdbi.withExtension(ProductDAO.class, dao -> {
+                dao.removeProduct(id);
                 return null;
             });
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("products.jsp");
 
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();

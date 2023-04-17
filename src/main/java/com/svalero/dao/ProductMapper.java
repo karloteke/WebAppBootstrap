@@ -14,7 +14,8 @@ import java.sql.SQLException;
         public Product map(ResultSet rs, StatementContext ctx) throws SQLException {
             return new Product(rs.getInt("product_id"),
                     rs.getString("name"),
-                    rs.getInt("price"),
+                    rs.getString("description"),
+                    rs.getDouble("price"),
                     rs.getString("image"));
     }
 }

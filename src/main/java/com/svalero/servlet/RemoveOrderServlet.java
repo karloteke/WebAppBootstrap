@@ -29,7 +29,7 @@ public class RemoveOrderServlet extends HttpServlet {
                 dao.removeOrder(id);
                 return null;
             });
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("orders.jsp");
 
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();

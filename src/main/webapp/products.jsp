@@ -3,6 +3,10 @@
 <%@ page import="com.svalero.domain.Customer" %>
 <%@ page import="com.svalero.dao.OrderDAO" %>
 <%@ page import="com.svalero.domain.Order" %>
+<%@ page import="com.svalero.dao.ProductDAO" %>
+<%@ page import="com.svalero.domain.Product" %>
+
+
 <%@ page import="java.util.List" %>
 
 <!–– Incluimos el header de la página (No va a cambiar) = header.jsp -->
@@ -19,13 +23,13 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-                 <form action="search-customer" method="GET" class="mb-3">
+                 <form action="search-product" method="GET" class="mb-3">
                      <div class="row">
                          <div class="col">
-                             <input type="text" name="firstName" class="form-control" placeholder="Nombre">
+                             <input type="text" name="name" class="form-control" placeholder="Nombre">
                          </div>
                          <div class="col">
-                             <input type="text" name="lastName" class="form-control" placeholder="Apellido">
+                             <input type="text" name="description" class="form-control" placeholder="Descripción">
                          </div>
                          <div class="col-auto">
                              <button type="submit" class="btn btn-primary">Buscar</button>
@@ -35,7 +39,7 @@
         </br>
         <h1 class="fw-light">Gestión de productos</h1>
         <p>
-          <a href="product-form.jsp" class="btn btn-outline-info">Registrar nuevo producto</a>
+          <a href="product-form.jsp?action=register" class="btn btn-outline-info">Registrar nuevo producto</a>
         </p>
       </div>
     </div>
@@ -48,23 +52,23 @@
            <%
               Class.forName("com.mysql.cj.jdbc.Driver");
               Database.connect();
-              List<Customer> customerList = Database.jdbi.withExtension(CustomerDAO.class, CustomerDAO::getCustomers);
-              for (Customer customer : customerList) {
+              List<Product> productList = Database.jdbi.withExtension(ProductDAO.class, ProductDAO::getProducts);
+              for (Product product : productList) {
            %>
 
         <div class="col">
           <div class="card shadow-sm">
-            <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>
+            <img src="../tienda_data/<%= product.getImage() %>" class="bd-placeholder-img card-img-top"/>
             <div class="card-body">
-              <p class="card-text"><%= customer.getFirstName() %> <%= customer.getLastName() %></p>
+              <p class="card-text"><%= product.getName() %> <%= product.getDescription() %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del cliente</a>
-                  <a href="customer-form.jsp?id=<%= customer.getCustomer_id() %>&action=edit&firstName=<%= customer.getFirstName() %>&lastName=<%= customer.getLastName() %>&adress=<%= customer.getAdress() %>&phone=<%= customer.getPhone() %>"
-                     class="btn btn-sm btn-outline-secondary">Editar cliente</a>
-                  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
+                  <a href="product-details.jsp?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-primary">Ver detalle del producto</a>
+                  <a href="product-form.jsp?id=<%= product.getProduct_id() %>&action=edit&name=<%= product.getName() %>&description=<%= product.getDescription() %>&price=<%= product.getPrice()%>"
+                     class="btn btn-sm btn-outline-secondary">Editar producto</a>
+                  <a href="remove-product?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
-                 <small class="text-muted"><%= customer.getPhone() %></small>
+                 <small class="text-muted"><%= product.getPrice() %></small>
                   </div>
                  </div>
                </div>

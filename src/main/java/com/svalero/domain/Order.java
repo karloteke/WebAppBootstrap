@@ -13,11 +13,9 @@ public class Order {
 
    private int order_id;
    @NonNull
-   private String customer_id;
+   private int customer_id;
    @NonNull
    private LocalDate date;
 
-   public Order(int order_id, int customer_id, LocalDate date) {
-   }
 }
 

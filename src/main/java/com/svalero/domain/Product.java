@@ -19,6 +19,4 @@ public class Product {
     @NonNull
     private String image;
 
-    public Product(int product_id, String name, int price, String image) {
-    }
 }

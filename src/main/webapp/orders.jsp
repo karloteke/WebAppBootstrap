@@ -4,6 +4,7 @@
 <%@ page import="com.svalero.dao.CustomerDAO" %>
 <%@ page import="com.svalero.domain.Customer" %>
 
+
 <%@ page import="java.util.List" %>
 
 <!–– Incluimos el header de la página (No va a cambiar) = header.jsp -->
@@ -23,7 +24,7 @@
                  <form action="search-order" method="GET" class="mb-3">
                      <div class="row">
                          <div class="col">
-                             <input type="text" name="customer_id" class="form-control" placeholder="Id cliente">
+                             <input type="text" name="order_id" class="form-control" placeholder="Id pedido">
                          </div>
                          <div class="col-auto">
                              <button type="submit" class="btn btn-primary">Buscar pedidos</button>
@@ -33,7 +34,7 @@
         </br>
         <h1 class="fw-light">Gestión de pedidos</h1>
         <p>
-          <a href="order-form.jsp" class="btn btn-outline-info">Registrar nuevo pedido</a>
+          <a href="order-form.jsp?action=register" class="btn btn-outline-info">Registrar nuevo pedido</a>
         </p>
       </div>
     </div>
@@ -53,7 +54,7 @@
         <div class="col">
           <div class="card shadow-sm">
             <div class="card-body">
-            <p class="card-text">Número de pedido: <%= order.getOrder_id() %></p>
+            <p class="card-text"><%= order.getOrder_id() %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del pedido</a>
@@ -61,7 +62,7 @@
                      class="btn btn-sm btn-outline-secondary">Editar pedido</a>
                   <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
                 </div>
-                 <small class="text-muted"><%= order.getDate() %></small>
+                 <small class="text-muted"><%= order.getOrder_id() %></small>
                   </div>
                  </div>
                </div>

@@ -57,7 +57,7 @@ import java.util.UUID;
                 if (action.equals("edit")) {
                     int productId = id;
                     Database.jdbi.withExtension(ProductDAO.class, dao -> {
-                        dao.editProduct(name,description, String.valueOf(price),fileName,productId);
+                        dao.editProduct(name,description,price,fileName,productId);
                         return null;
                     });
                 } else {
@@ -67,7 +67,7 @@ import java.util.UUID;
                     });
                 }
                 // TODO Mientras no corregimos el javascript para envio asincrono podemos redirigir al index
-                response.sendRedirect("index.jsp");
+                response.sendRedirect("products.jsp");
 
                 out.println("<div class='alert alert-success' role='alert'>Producto registrado correctamente</div>");
             } catch (ClassNotFoundException cnfe) {

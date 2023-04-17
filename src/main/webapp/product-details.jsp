@@ -6,18 +6,18 @@
 <%@include file="includes/header.jsp"%>
 <main>
 <%
-    int customerId =Integer.parseInt(request.getParameter("id"));
+    int productId =Integer.parseInt(request.getParameter("id"));
     Class.forName("com.mysql.cj.jdbc.Driver");
     Database.connect();
-    Customer customer = Database.jdbi.withExtension(CustomerDAO.class, dao -> dao.getCustomer(customerId));
+    Product product = Database.jdbi.withExtension(ProductDAO.class, dao -> dao.getProduct(productId));
 %>
 
 <div class="container">
     <div class="card mb-3">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title"><%= product.getName() %> <%= product.getDescription() %></h5>
-        <p class="card-text"><%= product.getPrice() %></p>
+        <h5 class="card-title"><%= product.getName() %></h5>
+        <p class="card-text"><%= product.getDescription() %></p>
         <p class="card-text"><small class="text-muted"><%= product.getPrice() %></small></p>
       </div>
     </div>

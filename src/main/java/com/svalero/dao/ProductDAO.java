@@ -23,7 +23,7 @@ public interface ProductDAO {
     @SqlUpdate("DELETE FROM products WHERE product_id = ?")
     void removeProduct(int product_id);
 
-    @SqlUpdate("UPDATE products SET name = ?, description = ?,image = ? WHERE product_id = ?")
-    void editProduct(String name, String description, String image, String fileName, int product_id);
+    @SqlUpdate("UPDATE products SET name = ?, description = ?, price = ?, image = ? WHERE product_id = ?")
+    void editProduct(String name, String description, Double price, String image, int product_id);
 
 }
