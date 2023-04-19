@@ -44,7 +44,6 @@
         <%
         }
         %>
-
         <div class="col-12">
             <input type="submit" value="<%= action %>"/>
         </div>
@@ -53,7 +52,6 @@
     <div id="result"></div>
 </div>
 </main>
-
 
 <%@include file="includes/footer.jsp"%>
 

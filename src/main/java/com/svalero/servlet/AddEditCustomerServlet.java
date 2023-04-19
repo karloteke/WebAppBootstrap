@@ -67,7 +67,7 @@ public class AddEditCustomerServlet extends HttpServlet {
                     return null;
                 });
             }
-            // Agregar HTML del botón de éxito y la función JavaScript que redirige a la página de clientes
+            // HTML del botón de registro y la función JavaScript que redirige a la página de clientes
             out.println("<div class='alert alert-success text-center' role='alert'>Cliente guardado correctamente</div>");
             out.println("<script>");
             out.println("setTimeout(function(){ window.location.href='index.jsp'; }, 3000);");

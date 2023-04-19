@@ -53,7 +53,7 @@ public class AddEditOrderServlet extends HttpServlet {
                     return null;
                 });
             }
-            // Agregar HTML del botón de éxito y la función JavaScript que redirige a la página de pedidos
+            // HTML del botón de registro y la función JavaScript que redirige a la página de pedidos
             out.println("<div class='alert alert-success text-center' role='alert'>Pedido guardado correctamente</div>");
             out.println("<script>");
             out.println("setTimeout(function(){ window.location.href='orders.jsp'; }, 3000);");

@@ -15,7 +15,7 @@ import java.sql.SQLException;
             return new Product(rs.getInt("product_id"),
                     rs.getString("name"),
                     rs.getString("description"),
-                    rs.getDouble("price"),
+                    rs.getBigDecimal("price"),
                     rs.getString("image"));
     }
 }

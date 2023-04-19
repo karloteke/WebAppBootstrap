@@ -2,6 +2,8 @@ package com.svalero.domain;
 
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class Product {
     @NonNull
     private String description;
     @NonNull
-    private double price;
+    private BigDecimal price;
     @NonNull
     private String image;
 

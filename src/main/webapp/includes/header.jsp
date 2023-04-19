@@ -70,22 +70,18 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-    .table-responsive {
+      .table-responsive {
         width: 100%;
-    }
-    .style{
-    width: 500px;
-    margin: 25px auto;
-    }
-    .background-color{
-     background-color: thistle;
-    }
+      }
+      .style{
+        width: 500px;
+        margin: 25px auto;
+      }
+
+
     </style>
-
-
   </head>
   <body>
-
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
    <div class="container-fluid ">
      <a class="navbar-brand" href="#">Gestión tienda de maquillaje</a>
@@ -107,4 +103,4 @@
      </div>
    </div>
  </nav>
-</header>
+<html>

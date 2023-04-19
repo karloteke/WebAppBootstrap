@@ -23,6 +23,15 @@ public class RemoveProductServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Database.connect();
+
+            Database.jdbi.withExtension(OrderDAO.class, dao -> {
+                dao.removeOrderByProduct(id);
+                return null;
+            });
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 

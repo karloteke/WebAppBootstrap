@@ -28,4 +28,8 @@ public interface CustomerDAO {
     @SqlUpdate("UPDATE customers SET first_name = ?, last_name = ?, adress = ?, phone = ?, image = ? WHERE customer_id = ?")
     void editCustomer(String firstName, String lastName, String adress, String phone, String image, int customer_id);
 
+    @SqlQuery("SELECT * FROM customers WHERE first_name = ? AND last_name = ?")
+    @UseRowMapper(CustomerMapper.class)
+    List<Order> searchCustomers(String firstName, String lastName);
+
 }

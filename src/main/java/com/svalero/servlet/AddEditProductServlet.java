@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
@@ -32,8 +33,7 @@ import java.util.UUID;
 
             String name = request.getParameter("name");
             String description = request.getParameter("description");
-            Double price = Double.valueOf((request.getParameter("price")));
-
+            BigDecimal price = BigDecimal.valueOf(Double.parseDouble(request.getParameter("price")));
 
             int id = 0;
             String action = request.getParameter("action");
@@ -46,7 +46,7 @@ import java.util.UUID;
                 Part imagePart = request.getPart("image");
                 String fileName;
                 if (imagePart.getSize() == 0) {
-                    fileName = "no_image.jpg";
+                    fileName = "no_image2.jpg";
                 } else {
                     fileName = UUID.randomUUID() + ".jpg";
                     InputStream fileStream = imagePart.getInputStream();
@@ -63,11 +63,11 @@ import java.util.UUID;
                     });
                 } else {
                     Database.jdbi.withExtension(ProductDAO.class, dao -> {
-                        dao.addProduct(name, description, price, fileName);
+                        dao.addProduct(name,description,price,fileName);
                         return null;
                     });
                 }
-                // Agregar HTML del botón de éxito y la función JavaScript que redirige a la página de productos
+                // HTML del botón de registro y la función JavaScript que redirige a la página de productos
                 out.println("<div class='alert alert-success text-center' role='alert'>Producto guardado correctamente</div>");
                 out.println("<script>");
                 out.println("setTimeout(function(){ window.location.href='products.jsp'; }, 3000);");

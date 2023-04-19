@@ -16,15 +16,25 @@
 
 
 <div class="container">
-    <div class="card mb-3 style background-color" >
-         <div class="card-body">
-             <h5 class="card-title">Pedido: <%= order.getOrder_id() %></h5>
-             <p class="card-text">Id cliente: <%= order.getCustomer_id() %></p>
-             <p class="card-text">Id producto: <%= order.getProduct_id() %></p>
-             <p class="card-text">Cantidad: <%= order.getAmount() %></p>
-           </div>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card my-3">
+        <div class="card-header bg-primary text-white">
+          <h5 class="m-0">Pedido <%= order.getOrder_id() %></h5>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Detalles del pedido:</h6>
+          <p class="card-text"><strong>Cliente:</strong> <%= order.getCustomer_id() %></p>
+          <p class="card-text"><strong>Producto:</strong> <%= order.getProduct_id() %></p>
+          <p class="card-text"><strong>Cantidad:</strong> <%= order.getAmount() %></p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
 
 </main>
 <%@include file="includes/footer.jsp"%>

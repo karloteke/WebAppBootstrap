@@ -2,6 +2,7 @@ package com.svalero.servlet;
 
 import com.svalero.dao.Database;
 import com.svalero.dao.CustomerDAO;
+import com.svalero.dao.OrderDAO;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,6 +23,14 @@ public class RemoveCustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Database.connect();
+
+            Database.jdbi.withExtension(OrderDAO.class, dao -> {
+                dao.removeCustomerByOrder(id);
+                return null;
+            });
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 

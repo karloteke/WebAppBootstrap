@@ -33,6 +33,7 @@
                  </form>
         </br>
         <h1 class="fw-light">Gestión de pedidos</h1>
+        </br>
         <p>
           <a href="order-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo pedido</a>
         </p>
@@ -72,7 +73,9 @@
                         <div class="btn-group" role="group">
                             <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Detalles</a>
                             <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>&product_id=<%= order.getProduct_id() %>&amount=<%= order.getAmount() %>" class="btn btn-sm btn-outline-secondary">Editar</a>
-                            <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                            <a href="remove-order?id=<%= order.getOrder_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el pedido número <%= order.getOrder_id() %>?')">
+                                <button class="btn btn-sm btn-outline-danger">Eliminar</button></a>
+                           <!-- <a href="remove-order?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-danger">Eliminar</a>-->
                         </div>
                     </td>
                 </tr>
@@ -82,16 +85,6 @@
 </div>
 </br>
 
-<!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
 
 </main>
 

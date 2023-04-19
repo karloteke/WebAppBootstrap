@@ -23,9 +23,9 @@
     <div class="card mb-3 style">
      <img src="../tienda_data/<%= product.getImage() %>" class="bd-placeholder-img card-img-top"/>
       <div class="card-body">
-        <h5 class="card-title"><%= product.getName() %></h5>
-        <p class="card-text"><%= product.getDescription() %></p>
-        <p class="card-text"><small class="text-muted"><%= product.getPrice() %>€</small></p>
+        <h5 class="card-title"><%= product.getName() %> <%= product.getDescription() %></h5>
+        <p class="card-text">Precio: <%= product.getPrice() %>€</p>
+        <p class="card-text">Id producto: <%= product.getProduct_id() %></p>
       </div>
     </div>
 </div>

@@ -1,15 +1,5 @@
+<%@ page import="java.math.BigDecimal" %>
 <%@include file="includes/header.jsp"%>
-<!--<script type="text/javascript">
-    $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            event.preventDefault();
-            var formValue = $(this).serialize();
-            $.post("add-customer", formValue, function(data) {
-                $("#result").html(data);
-            });
-        });
-    });
-</script>-->
 
 <%
     String action = request.getParameter("action");
@@ -17,11 +7,11 @@
     if (name == null) name = "";
     String description = request.getParameter("description");
     if (description == null) description = "";
-     Double price = 0.0;
-       String priceStr = request.getParameter("price");
-       if (priceStr != null && !priceStr.isEmpty()) {
-           price = Double.parseDouble(priceStr);
-       }
+    BigDecimal price = BigDecimal.ZERO;
+    String priceStr = request.getParameter("price");
+    if (priceStr != null && !priceStr.isEmpty()) {
+    price = new BigDecimal(priceStr);
+    }
 %>
 
 <main>

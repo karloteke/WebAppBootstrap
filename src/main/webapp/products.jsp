@@ -38,6 +38,7 @@
                  </form>
         </br>
         <h1 class="fw-light">Gestión de productos</h1>
+        </br>
         <p>
           <a href="product-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo producto</a>
         </p>
@@ -66,9 +67,11 @@
                   <a href="product-details.jsp?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-primary">Ver detalle del producto</a>
                   <a href="product-form.jsp?id=<%= product.getProduct_id() %>&action=edit&name=<%= product.getName() %>&description=<%= product.getDescription() %>&price=<%= product.getPrice()%>"
                      class="btn btn-sm btn-outline-secondary">Editar producto</a>
-                  <a href="remove-product?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>
+                  <a href="remove-product?id=<%= product.getProduct_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el producto <%= product.getName() %> ?.Se eliminaran todos los pedidos con ese id de producto.')">
+                     <button class="btn btn-sm btn-outline-danger">Eliminar</button></a>
+              <!--<a href="remove-product?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-danger">Eliminar</a>-->
                 </div>
-                 <small class="text-muted"><%= product.getPrice() %>€</small>
+                 <small class="text-muted">Id <%= product.getProduct_id() %></small>
                   </div>
                  </div>
                </div>

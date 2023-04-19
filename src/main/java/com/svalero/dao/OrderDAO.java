@@ -23,6 +23,11 @@ public interface OrderDAO {
     @SqlUpdate("DELETE FROM orders WHERE order_id = ?")
     void removeOrder(int order_id);
 
+    @SqlUpdate("DELETE FROM orders WHERE product_id = ?")
+    void removeOrderByProduct (int product_id);
+    @SqlUpdate("DELETE FROM orders WHERE customer_id = ?")
+    void removeCustomerByOrder (int customer_id);
+
     @SqlUpdate("UPDATE orders SET customer_id = ?, product_id = ?, amount = ? WHERE order_id = ?")
     void editOrder(int customer_id, int product_id, int amount, int order_id);
 

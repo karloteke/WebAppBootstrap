@@ -11,29 +11,27 @@
     Database.connect();
     Customer customer = Database.jdbi.withExtension(CustomerDAO.class, dao -> dao.getCustomer(customerId));
 %>
+<!Doc type html>
+<html lang="es">
+  <head>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 <div class="container">
     <div class="card mb-3 style">
       <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>
       <div class="card-body">
         <h5 class="card-title"><%= customer.getFirstName() %> <%= customer.getLastName() %></h5>
-        <p class="card-text"><%= customer.getAdress() %></p>
-        <p class="card-text"><small class="text-muted"><%= customer.getPhone() %></small></p>
+        <p class="card-text">Dirección: <%= customer.getAdress() %></p>
+        <p class="card-text">Teléfono: <%= customer.getPhone() %></p>
+        <p class="card-text">Id cliente: <%= customer.getCustomer_id() %></p>
       </div>
     </div>
 </div>
 
 
-<!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
+
 
 </main>
 <%@include file="includes/footer.jsp"%>
