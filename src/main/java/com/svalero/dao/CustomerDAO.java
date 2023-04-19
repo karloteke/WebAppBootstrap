@@ -30,6 +30,6 @@ public interface CustomerDAO {
 
     @SqlQuery("SELECT * FROM customers WHERE first_name = ? AND last_name = ?")
     @UseRowMapper(CustomerMapper.class)
-    List<Order> searchCustomers(String firstName, String lastName);
+    List<Customer> searchCustomers(String firstName, String lastName);
 
 }

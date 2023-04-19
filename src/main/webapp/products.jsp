@@ -5,8 +5,6 @@
 <%@ page import="com.svalero.domain.Order" %>
 <%@ page import="com.svalero.dao.ProductDAO" %>
 <%@ page import="com.svalero.domain.Product" %>
-
-
 <%@ page import="java.util.List" %>
 
 <!–– Incluimos el header de la página (No va a cambiar) = header.jsp -->

@@ -59,7 +59,7 @@
                 <th>Id cliente</th>
                 <th>Id producto</th>
                 <th>Cantidad</th>
-                <th></th>
+                <th>Fecha</th>
             </tr>
         </thread>
         <body>
@@ -69,6 +69,7 @@
                     <td><%= order.getCustomer_id() %></td>
                     <td><%= order.getProduct_id() %></td>
                     <td><%= order.getAmount() %></td>
+                    <td><%= order.getDate() %></td>
                     <td>
                         <div class="btn-group" role="group">
                             <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-primary">Detalles</a>
