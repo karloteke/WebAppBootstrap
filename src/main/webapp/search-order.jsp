@@ -22,6 +22,7 @@
                 <th>Id cliente</th>
                 <th>Id producto</th>
                 <th>Cantidad</th>
+                <th>Fecha</th>
             </tr>
           </thread>
 <body>
@@ -31,6 +32,7 @@
             <td><%= order.getCustomer_id() %></td>
             <td><%= order.getProduct_id() %></td>
             <td><%= order.getAmount() %></td>
+            <td><%= order.getDate() %></td>
         </tr>
     <% } %>
 </body>

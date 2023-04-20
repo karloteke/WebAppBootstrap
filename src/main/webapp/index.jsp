@@ -28,7 +28,7 @@
                              <input type="text" name="lastName" class="form-control" placeholder="Apellido">
                          </div>
                          <div class="col-auto">
-                             <button type="submit" class="btn btn-primary">Buscar</button>
+                             <button type="submit" class="btn btn-info">Buscar clientes</button>
                          </div>
                      </div>
                  </form>
@@ -64,8 +64,9 @@
                   <a href="customer-form.jsp?id=<%= customer.getCustomer_id() %>&action=edit&firstName=<%= customer.getFirstName() %>&lastName=<%= customer.getLastName() %>&adress=<%= customer.getAdress() %>&phone=<%= customer.getPhone() %>"
                      class="btn btn-sm btn-outline-secondary">Editar cliente</a>
              <!-- <a href="remove-customer?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>-->
-                  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar a <%= customer.getFirstName() %> <%= customer.getLastName() %>? Se eliminaran todos los pedidos con ese id de cliente.')">
-                     <button class="btn btn-sm btn-outline-danger">Eliminar</button></a>
+                  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar a <%= customer.getFirstName() %> <%= customer.getLastName() %>? Se eliminaran todos los pedidos con ese id de cliente.')"
+                    class="btn btn-sm btn-outline-danger">Eliminar</a>
+
                 </div>
                  <small class="text-muted">Id <%= customer.getCustomer_id() %></small>
                   </div>

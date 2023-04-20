@@ -30,7 +30,7 @@
                              <input type="text" name="description" class="form-control" placeholder="Descripción">
                          </div>
                          <div class="col-auto">
-                             <button type="submit" class="btn btn-primary">Buscar</button>
+                             <button type="submit" class="btn btn-info">Buscar productos</button>
                          </div>
                      </div>
                  </form>
@@ -65,8 +65,8 @@
                   <a href="product-details.jsp?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-primary">Ver detalle del producto</a>
                   <a href="product-form.jsp?id=<%= product.getProduct_id() %>&action=edit&name=<%= product.getName() %>&description=<%= product.getDescription() %>&price=<%= product.getPrice()%>"
                      class="btn btn-sm btn-outline-secondary">Editar producto</a>
-                  <a href="remove-product?id=<%= product.getProduct_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el producto <%= product.getName() %> ?.Se eliminaran todos los pedidos con ese id de producto.')">
-                     <button class="btn btn-sm btn-outline-danger">Eliminar</button></a>
+                  <a href="remove-product?id=<%= product.getProduct_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el producto <%= product.getName() %> ?.Se eliminaran todos los pedidos con ese id de producto.')"
+                    class="btn btn-sm btn-outline-danger">Eliminar</a>
               <!--<a href="remove-product?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-danger">Eliminar</a>-->
                 </div>
                  <small class="text-muted">Id <%= product.getProduct_id() %></small>

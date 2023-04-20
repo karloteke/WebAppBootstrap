@@ -78,7 +78,6 @@
         margin: 25px auto;
       }
 
-
     </style>
   </head>
   <body>

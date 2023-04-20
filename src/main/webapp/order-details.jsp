@@ -14,19 +14,19 @@
     Order order = Database.jdbi.withExtension(OrderDAO.class, dao -> dao.getOrder(OrderId));
 %>
 
-
+</br>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card my-3">
-        <div class="card-header bg-primary text-white">
-          <h5 class="m-0">Pedido <%= order.getOrder_id() %></h5>
+      <div class="card my-3 ">
+        <div class="card-header bg-info text-white text-center">
+          <h5 class="m-0 display-4">Pedido <%= order.getOrder_id() %></h5>
         </div>
-        <div class="card-body">
-          <h6 class="card-subtitle mb-2 text-muted">Detalles del pedido:</h6>
-          <p class="card-text"><strong>Cliente:</strong> <%= order.getCustomer_id() %></p>
-          <p class="card-text"><strong>Producto:</strong> <%= order.getProduct_id() %></p>
+        <div class="card-body text-center">
+          <p class="card-text"><strong>Id de cliente:</strong> <%= order.getCustomer_id() %></p>
+          <p class="card-text"><strong>Id de producto:</strong> <%= order.getProduct_id() %></p>
           <p class="card-text"><strong>Cantidad:</strong> <%= order.getAmount() %></p>
+          <p class="card-text"><strong>Fecha de pedido:</strong> <%= order.getDate() %></p>
         </div>
       </div>
     </div>
