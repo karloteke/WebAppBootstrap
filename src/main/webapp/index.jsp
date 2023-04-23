@@ -5,11 +5,10 @@
 <%@ page import="com.svalero.domain.Order" %>
 <%@ page import="java.util.List" %>
 
-<!–– Incluimos el header de la página (No va a cambiar) = header.jsp -->
 <%@include file="includes/header.jsp"%>
 <main>
 
-<!doc type html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <%@page contentType="text/html"%>
@@ -28,7 +27,7 @@
                              <input type="text" name="lastName" class="form-control" placeholder="Apellido">
                          </div>
                          <div class="col-auto">
-                             <button type="submit" class="btn btn-info">Buscar clientes</button>
+                             <button type="submit" class="btn btn-dark">Buscar clientes</button>
                          </div>
                      </div>
                  </form>
@@ -36,7 +35,7 @@
         <h1 class="fw-light">Gestión de clientes</h1>
         </br>
         <p>
-          <a href="customer-form.jsp?action=Registrar" class="btn btn-outline-info">Registrar nuevo cliente</a>
+          <a href="customer-form.jsp?action=Registrar" class="btn btn-outline-dark">Registrar nuevo cliente</a>
         </p>
       </div>
     </div>
@@ -60,13 +59,11 @@
               <p class="card-text"><%= customer.getFirstName() %> <%= customer.getLastName() %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-primary">Ver detalles del cliente</a>
+                  <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-info">Ver detalles del cliente</a>
                   <a href="customer-form.jsp?id=<%= customer.getCustomer_id() %>&action=edit&firstName=<%= customer.getFirstName() %>&lastName=<%= customer.getLastName() %>&adress=<%= customer.getAdress() %>&phone=<%= customer.getPhone() %>"
-                     class="btn btn-sm btn-outline-secondary">Editar cliente</a>
-             <!-- <a href="remove-customer?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-warning">Eliminar</a>-->
+                     class="btn btn-sm btn-outline-warning">Editar cliente</a>
                   <a href="remove-customer?id=<%= customer.getCustomer_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar a <%= customer.getFirstName() %> <%= customer.getLastName() %>? Se eliminaran todos los pedidos con ese id de cliente.')"
                     class="btn btn-sm btn-outline-danger">Eliminar</a>
-
                 </div>
                  <small class="text-muted">Id <%= customer.getCustomer_id() %></small>
                   </div>
@@ -80,19 +77,5 @@
          </div>
        </div>
 
-       <!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
-       <nav aria-label="Page navigation example">
-         <ul class="pagination">
-           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-           <li class="page-item"><a class="page-link" href="#">1</a></li>
-           <li class="page-item"><a class="page-link" href="#">2</a></li>
-           <li class="page-item"><a class="page-link" href="#">3</a></li>
-           <li class="page-item"><a class="page-link" href="#">Next</a></li>
-         </ul>
-       </nav>
-
 </main>
-
-<!–– Incluimos el footer de la página (No va a cambiar) = footer.jsp -->
-
 <%@include file="includes/footer.jsp"%>

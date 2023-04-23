@@ -1,4 +1,3 @@
-<!--Importamos las clases -->
 <%@ page import="com.svalero.dao.Database" %>
 <%@ page import="com.svalero.dao.ProductDAO" %>
 <%@ page import="com.svalero.domain.Product" %>
@@ -6,12 +5,12 @@
 <%@include file="includes/header.jsp"%>
 <main>
 
-<!doc type html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
 <%
     int productId =Integer.parseInt(request.getParameter("id"));
     Class.forName("com.mysql.cj.jdbc.Driver");
@@ -30,6 +29,3 @@
     </div>
 </div>
 
-
-</main>
-<%@include file="includes/footer.jsp"%>

@@ -1,7 +1,5 @@
-
 <%@include file="includes/header.jsp"%>
-
-
+<main>
 <%
     String action = request.getParameter("action");
     String customer_id = request.getParameter("customer_id");
@@ -11,14 +9,16 @@
     String amount = request.getParameter("amount");
     if (amount == null) amount = "";
 
+    String buttonText = "Registrar";
+    if (action.equals("edit")) buttonText = "Editar";
+
 %>
 
-<main>
 <div class="container">
     <br/>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.jsp">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Registrar pedido</li>
       </ol>
     </nav>
@@ -27,14 +27,14 @@
              <label for="id" class="form-label">Id cliente</label>
              <input type="text" class="form-control" id="id" name="customer_id" value='<%= customer_id %>'>
        </div>
-       <div class="col-md-6">
+        <div class="col-md-6">
             <label for="id" class="form-label">Id producto</label>
             <input type="text" class="form-control" id="id" name="product_id" value='<%= product_id %>'>
-      </div>
-       <div class="col-md-6">
+       </div>
+        <div class="col-md-6">
             <label for="amount" class="form-label">Cantidad</label>
             <input type="text" class="form-control" id="id" name="amount" value='<%= amount %>'>
-      </div>
+        </div>
         <input type="hidden" name="action" value="<%= action %>"/>
         <%
         if (action != null && action.equals("edit")) {
@@ -45,15 +45,13 @@
         }
         %>
         <div class="col-12">
-            <input type="submit" value="<%= action %>"/>
+            <input type="submit" class="btn btn-dark" value="<%= buttonText %>"/>
         </div>
-    </form>
-    <br/>
+     </form>
+     <br/>
     <div id="result"></div>
 </div>
-</main>
 
-<%@include file="includes/footer.jsp"%>
 
 
 

@@ -6,4 +6,5 @@
         <param-name>image-path</param-name>
         <param-value>/Users/Jesus/Desktop/apache-tomcat-10.1.7/webapps/tienda_data</param-value>
     </context-param>
+
 </web-app>

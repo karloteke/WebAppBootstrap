@@ -19,10 +19,10 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card my-3 ">
-        <div class="card-header bg-info text-white text-center">
+        <div class="card-header bg-white text-dark text-center">
           <h5 class="m-0 display-4">Pedido <%= order.getOrder_id() %></h5>
         </div>
-        <div class="card-body text-center">
+        <div class="card-body text-center bg-purple">
           <p class="card-text"><strong>Id de cliente:</strong> <%= order.getCustomer_id() %></p>
           <p class="card-text"><strong>Id de producto:</strong> <%= order.getProduct_id() %></p>
           <p class="card-text"><strong>Cantidad:</strong> <%= order.getAmount() %></p>
@@ -33,8 +33,3 @@
   </div>
 </div>
 
-
-
-
-</main>
-<%@include file="includes/footer.jsp"%>

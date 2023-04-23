@@ -12,20 +12,22 @@
     if (priceStr != null && !priceStr.isEmpty()) {
     price = new BigDecimal(priceStr);
     }
+    String buttonText = "Registrar";
+    if (action.equals("edit")) buttonText = "Editar";
 %>
 
 <main>
-<!doc type html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
 <div class="container">
     <br/>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.jsp">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Registrar producto</li>
       </ol>
     </nav>
@@ -57,14 +59,13 @@
         }
         %>
         <div class="col-12">
-            <input type="submit" value="<%= action %>"/>
+            <input type="submit" class="btn btn-dark" value="<%= buttonText %>"/>
         </div>
     </form>
     <br/>
     <div id="result"></div>
 </div>
-</main>
-<%@include file="includes/footer.jsp"%>
+
 
 
 

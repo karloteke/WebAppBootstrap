@@ -77,13 +77,52 @@
         width: 500px;
         margin: 25px auto;
       }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+      }
+      body {
+       background: linear-gradient(to bottom, #8E2DE2, #FFF);
+      }
+      footer {
+        background: linear-gradient(to bottom, #4d4d4d, #999999);
+        color: #fff;
+      }
+      footer a {
+        color: #000000;
+      }
+      .navbar-brand img {
+        height: 40px;
+      }
+      .navbar-brand {
+        margin-right: 10px;
+      }
+      .bg-purple {
+        background: linear-gradient(to bottom, #8E2DE2, #FFF);
+      }
+      .bg-white {
+        background-color: #FFFFFF ;
+      }
+      .navbar {
+        background-color: #D1A9F3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
 
     </style>
   </head>
-  <body>
- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<body>
+ <nav class="navbar navbar-expand-lg">
    <div class="container-fluid ">
-     <a class="navbar-brand" href="#">Gestión tienda de maquillaje</a>
+     <a class="navbar-brand" href="#">
+           <img src="../tienda_data/Pintalabios.jpg" alt="Logo de la tienda">
+           Gestión tienda de maquillaje
+         </a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
@@ -95,11 +134,12 @@
          <li class="nav-item">
            <a class="nav-link" href="/tienda/orders.jsp">Pedidos</a>
          </li>
-     <li class="nav-item">
-               <a class="nav-link" href="/tienda/products.jsp">Productos</a>
-             </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/tienda/products.jsp">Productos</a>
+         </li>
        </ul>
      </div>
    </div>
  </nav>
+</body>
 <html>
