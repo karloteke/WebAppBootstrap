@@ -13,7 +13,6 @@
 
 <!DOCTYPE html>
 <html lang="es">
-  <head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -34,10 +33,10 @@
                          </div>
                      </div>
                  </form>
-        </br>
+        <br>
         <h1 class="fw-light">Gestión de pedidos</h1>
-        </br>
         <p>
+        <br>
           <a href="order-form.jsp?action=Registrar" class="btn btn-outline-dark">Registrar nuevo pedido</a>
         </p>
       </div>
@@ -91,7 +90,7 @@
         </body>
     </table>
 </div>
-</br>
+<br>
 
 <script>
 function confirmDelete(order_id, orderId) {

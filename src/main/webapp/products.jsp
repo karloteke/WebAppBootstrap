@@ -36,9 +36,9 @@
                          </div>
                      </div>
                  </form>
-                 </br>
+        <br>
         <h1 class="fw-light">Gestión de productos</h1>
-        </br>
+        <br>
         <p>
           <a href="product-form.jsp?action=Registrar" class="btn btn-outline-dark">Registrar nuevo producto</a>
         </p>

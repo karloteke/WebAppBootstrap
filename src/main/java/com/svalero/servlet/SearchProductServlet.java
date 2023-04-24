@@ -31,8 +31,26 @@ public class SearchProductServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Database.connect();
 
+            String sql;
+            if (name != null && description != null) {
+                sql = "SELECT * FROM products WHERE name = ? AND description = ?";
+            } else if (name != null) {
+                sql = "SELECT * FROM products WHERE name LIKE ?";
+                description = ""; // Para evitar errores en el binding
+            } else if (description != null) {
+                sql = "SELECT * FROM products WHERE description LIKE ?";
+                name = ""; // Para evitar errores en el binding
+            } else {
+                // No se ha pasado ningún campo de búsqueda
+                sql = "SELECT * FROM products";
+                name = "";
+                description = "";
+            }
+
+            String finalName = name;
+            String finalDescription = description;
             List<Product> products = Database.jdbi.withExtension(ProductDAO.class, dao -> {
-                return dao.searchProducts(name, description);
+                return dao.searchProducts(finalName, finalDescription);
             });
 
             request.setAttribute("products", products);

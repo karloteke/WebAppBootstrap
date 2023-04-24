@@ -1,5 +1,6 @@
 <%@ page import="java.math.BigDecimal" %>
 <%@include file="includes/header.jsp"%>
+<main>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -36,7 +37,7 @@
     if (action.equals("edit")) buttonText = "Modificar";
 %>
 
-<main>
+
 <!DOCTYPE html>
 <html lang="es">
     <%@page contentType="text/html"%>
@@ -44,7 +45,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
 <div class="container">
-    <br/>
+    <br>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
@@ -82,9 +83,11 @@
             <input type="submit" class="btn btn-dark" value="<%= buttonText %>"/>
         </div>
     </form>
-    <br/>
+    <br>
     <div id="result"></div>
 </div>
+</main>
+</html>
 
 
 

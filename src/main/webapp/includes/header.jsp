@@ -1,7 +1,6 @@
 
-<!doc type html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -90,13 +89,6 @@
       body {
        background: linear-gradient(to bottom, #8E2DE2, #FFF);
       }
-      footer {
-        background: linear-gradient(to bottom, #4d4d4d, #999999);
-        color: #fff;
-      }
-      footer a {
-        color: #000000;
-      }
       .navbar-brand img {
         height: 40px;
       }
@@ -113,14 +105,16 @@
         background-color: #D1A9F3;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
+       /* Regla para todas las tablas, excepto la tabla con id "no-seleccionable" */
       .table tbody tr:not(:first-child):hover {
         background-color: #ECDBFA;
       }
-
-
+      /* Regla específica para la tabla con id "no-seleccionable" */
+       #no-seleccionable tbody tr:hover {
+       background-color: transparent;
+      }
     </style>
-  </head>
-<body>
+
  <nav class="navbar navbar-expand-lg">
    <div class="container-fluid ">
      <a class="navbar-brand" href="#">
@@ -145,5 +139,4 @@
      </div>
    </div>
  </nav>
-</body>
 <html>

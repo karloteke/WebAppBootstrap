@@ -8,16 +8,15 @@
 <%@include file="includes/header.jsp"%>
 <main>
 
-<head>
-   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-
 <!DOCTYPE html>
 <html lang="es">
-  <head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+<head>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -35,9 +34,9 @@
                          </div>
                      </div>
                  </form>
-        </br>
+        <br>
         <h1 class="fw-light">Gestión de clientes</h1>
-        </br>
+        <br>
         <p>
           <a href="customer-form.jsp?action=Registrar" class="btn btn-outline-dark">Registrar nuevo cliente</a>
         </p>
@@ -105,10 +104,6 @@ function confirmDelete(name, customerId) {
    return false;
 }
 </script>
-
-
-
-
 
 </main>
 <%@include file="includes/footer.jsp"%>
