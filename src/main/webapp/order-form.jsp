@@ -1,5 +1,25 @@
 <%@include file="includes/header.jsp"%>
-<main>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("form").on("submit", function(event) {
+          event.preventDefault();
+          var form = $(this)[0];
+          var formData = new FormData(form);
+          $.ajax({
+              url: "edit-order",
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(data) {
+                  $("#result").html(data);
+              },
+          });
+      });
+  });
+</script>
+
 <%
     String action = request.getParameter("action");
     String customer_id = request.getParameter("customer_id");
@@ -10,7 +30,7 @@
     if (amount == null) amount = "";
 
     String buttonText = "Registrar";
-    if (action.equals("edit")) buttonText = "Editar";
+    if (action.equals("edit")) buttonText = "Modificar";
 
 %>
 

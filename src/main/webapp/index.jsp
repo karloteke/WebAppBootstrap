@@ -8,6 +8,10 @@
 <%@include file="includes/header.jsp"%>
 <main>
 
+<head>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -62,8 +66,14 @@
                   <a href="view-details.jsp?id=<%= customer.getCustomer_id() %>" class="btn btn-sm btn-outline-info">Ver detalles del cliente</a>
                   <a href="customer-form.jsp?id=<%= customer.getCustomer_id() %>&action=edit&firstName=<%= customer.getFirstName() %>&lastName=<%= customer.getLastName() %>&adress=<%= customer.getAdress() %>&phone=<%= customer.getPhone() %>"
                      class="btn btn-sm btn-outline-warning">Editar cliente</a>
-                  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar a <%= customer.getFirstName() %> <%= customer.getLastName() %>? Se eliminaran todos los pedidos con ese id de cliente.')"
-                    class="btn btn-sm btn-outline-danger">Eliminar</a>
+                <!--  <a href="remove-customer?id=<%= customer.getCustomer_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar a <%= customer.getFirstName() %> <%= customer.getLastName() %>? Se eliminaran todos los pedidos con ese id de cliente.')"
+                    class="btn btn-sm btn-outline-danger">Eliminar</a>-->
+                <a href="remove-customer?id=<%= customer.getCustomer_id() %>"
+                class="btn btn-sm btn-outline-danger"
+                onclick="return confirmDelete('<%= customer.getFirstName() %> <%= customer.getLastName() %>', <%= customer.getCustomer_id() %>);">Eliminar</a>
+
+
+                 </form>
                 </div>
                  <small class="text-muted">Id <%= customer.getCustomer_id() %></small>
                   </div>
@@ -76,6 +86,29 @@
            </div>
          </div>
        </div>
+
+
+<script>
+function confirmDelete(name, customerId) {
+   swal({
+      title: "¿Estás seguro que deseas eliminar a " + name + "?",
+      text: "Se eliminaran todos los pedidos con ese id de cliente",
+      icon: "warning",
+      buttons: ["Cancelar", "Eliminar"],
+      dangerMode: true,
+   })
+   .then((willDelete) => {
+      if (willDelete) {
+         window.location.href = "remove-customer?id=" + customerId;
+      }
+   });
+   return false;
+}
+</script>
+
+
+
+
 
 </main>
 <%@include file="includes/footer.jsp"%>

@@ -10,6 +10,10 @@
 <%@include file="includes/header.jsp"%>
 <main>
 
+<head>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
 <!DOCTYPE html>
 <html lang="es">
   <%@page contentType="text/html"%>
@@ -62,8 +66,11 @@
                   <a href="product-details.jsp?id=<%= product.getProduct_id() %>" class="btn btn-sm btn-outline-info">Ver detalle del producto</a>
                   <a href="product-form.jsp?id=<%= product.getProduct_id() %>&action=edit&name=<%= product.getName() %>&description=<%= product.getDescription() %>&price=<%= product.getPrice()%>"
                     class="btn btn-sm btn-outline-warning">Editar producto</a>
-                  <a href="remove-product?id=<%= product.getProduct_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el producto <%= product.getName() %> ?.Se eliminaran todos los pedidos con ese id de producto.')"
-                    class="btn btn-sm btn-outline-danger">Eliminar</a>
+                <!--<a href="remove-product?id=<%= product.getProduct_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el producto <%= product.getName() %> ?.Se eliminaran todos los pedidos con ese id de producto.')"
+                    class="btn btn-sm btn-outline-danger">Eliminar</a>-->
+                  <a href="remove-product?id=<%= product.getProduct_id() %>"
+                    class="btn btn-sm btn-outline-danger"
+                    onclick="return confirmDelete('<%= product.getName() %> <%= product.getDescription() %>', <%= product.getProduct_id() %>);">Eliminar</a>
                 </div>
                  <small class="text-muted">Id <%= product.getProduct_id() %></small>
                   </div>
@@ -76,6 +83,24 @@
            </div>
          </div>
        </div>
+
+<script>
+function confirmDelete(name, productId) {
+  swal({
+     title: "¿Estás seguro que deseas eliminar el producto " + name + "?",
+     text: "Se eliminaran todos los pedidos con ese id de producto",
+     icon: "warning",
+     buttons: ["Cancelar", "Eliminar"],
+     dangerMode: true,
+  })
+  .then((willDelete) => {
+     if (willDelete) {
+        window.location.href = "remove-product?id=" + productId;
+     }
+  });
+  return false;
+}
+</script>
 
 </main>
 <%@include file="includes/footer.jsp"%>

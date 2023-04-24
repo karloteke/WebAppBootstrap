@@ -1,6 +1,26 @@
 <%@ page import="java.math.BigDecimal" %>
 <%@include file="includes/header.jsp"%>
 
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("form").on("submit", function(event) {
+          event.preventDefault();
+          var form = $(this)[0];
+          var formData = new FormData(form);
+          $.ajax({
+              url: "edit-product",
+              type: "POST",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(data) {
+                  $("#result").html(data);
+              },
+          });
+      });
+  });
+</script>
+
 <%
     String action = request.getParameter("action");
     String name = request.getParameter("name");
@@ -13,7 +33,7 @@
     price = new BigDecimal(priceStr);
     }
     String buttonText = "Registrar";
-    if (action.equals("edit")) buttonText = "Editar";
+    if (action.equals("edit")) buttonText = "Modificar";
 %>
 
 <main>

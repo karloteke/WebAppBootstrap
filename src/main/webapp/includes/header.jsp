@@ -113,6 +113,10 @@
         background-color: #D1A9F3;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
+      .table tbody tr:not(:first-child):hover {
+        background-color: #ECDBFA;
+      }
+
 
     </style>
   </head>
