@@ -15,6 +15,9 @@
               contentType: false,
               success: function(data) {
                   $("#result").html(data);
+                  setTimeout(function(){
+                    window.location.href='index.jsp';
+                  }, 3000);
               },
           });
       });

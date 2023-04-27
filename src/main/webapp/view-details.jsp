@@ -23,12 +23,12 @@
 <div class="container">
     <div class="card mb-3 style">
       <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>
-      <div class="card-body">
-        <h5 class="card-title"><%= customer.getFirstName() %> <%= customer.getLastName() %></h5>
-        <p class="card-text">Dirección: <%= customer.getAdress() %></p>
-        <p class="card-text">Teléfono: <%= customer.getPhone() %></p>
-        <p class="card-text">Id cliente: <%= customer.getCustomer_id() %></p>
-      </div>
+          <div class="card-body d-flex flex-column align-items-center">
+            <h4 class="card-title" ><%= customer.getFirstName() %> <%= customer.getLastName() %></h4>
+            <p class="card-text" >Dirección: <%= customer.getAdress() %></p>
+            <p class="card-text" >Teléfono: <%= customer.getPhone() %></p>
+            <p class="card-text" >Id cliente: <%= customer.getCustomer_id() %></p>
+          </div>
     </div>
 </div>
 </main>

@@ -86,7 +86,6 @@
          </div>
        </div>
 
-
 <script>
 function confirmDelete(name, customerId) {
    swal({

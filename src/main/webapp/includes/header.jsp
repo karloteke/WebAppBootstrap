@@ -113,6 +113,7 @@
        #no-seleccionable tbody tr:hover {
        background-color: transparent;
       }
+
     </style>
 
  <nav class="navbar navbar-expand-lg">

@@ -2,6 +2,7 @@
 <%@include file="includes/header.jsp"%>
 <main>
 
+
 <script type="text/javascript">
   $(document).ready(function() {
       $("form").on("submit", function(event) {
@@ -16,6 +17,9 @@
               contentType: false,
               success: function(data) {
                   $("#result").html(data);
+                  setTimeout(function(){
+                    window.location.href='products.jsp';
+                  }, 3000);
               },
           });
       });

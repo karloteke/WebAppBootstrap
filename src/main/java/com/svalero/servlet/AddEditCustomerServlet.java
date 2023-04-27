@@ -27,9 +27,8 @@ public class AddEditCustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<head><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></head>");
-        String imagePath = request.getServletContext().getInitParameter("image-path");
 
+        String imagePath = request.getServletContext().getInitParameter("image-path");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String adress = request.getParameter("adress");
@@ -67,11 +66,8 @@ public class AddEditCustomerServlet extends HttpServlet {
                     return null;
                 });
             }
-            // HTML del botón de registro y la función JavaScript que redirige a la página de clientes
+            // HTML del botón de registro
             out.println("<div class='alert alert-success text-center' role='alert'>Cliente guardado correctamente</div>");
-            out.println("<script>");
-            out.println("setTimeout(function(){ window.location.href='index.jsp'; }, 3000);");
-            out.println("</script>");
 
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();

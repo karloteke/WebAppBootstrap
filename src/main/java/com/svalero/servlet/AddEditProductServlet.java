@@ -28,9 +28,8 @@ import java.util.UUID;
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            out.println("<head><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'></head>");
-            String imagePath = request.getServletContext().getInitParameter("image-path");
 
+            String imagePath = request.getServletContext().getInitParameter("image-path");
             String name = request.getParameter("name");
             String description = request.getParameter("description");
             BigDecimal price = BigDecimal.valueOf(Double.parseDouble(request.getParameter("price")));
@@ -67,11 +66,8 @@ import java.util.UUID;
                         return null;
                     });
                 }
-                // HTML del botón de registro y la función JavaScript que redirige a la página de productos
+                // HTML del botón de registro
                 out.println("<div class='alert alert-success text-center' role='alert'>Producto guardado correctamente</div>");
-                out.println("<script>");
-                out.println("setTimeout(function(){ window.location.href='products.jsp'; }, 3000);");
-                out.println("</script>");
 
             } catch (ClassNotFoundException cnfe) {
                 cnfe.printStackTrace();
