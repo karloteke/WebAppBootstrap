@@ -78,8 +78,6 @@
                             <a href="order-details.jsp?id=<%= order.getOrder_id() %>" class="btn btn-sm btn-outline-secondary">Detalles</a>
                             <a href="order-form.jsp?id=<%= order.getOrder_id() %>&action=edit&customer_id=<%= order.getCustomer_id() %>&product_id=<%= order.getProduct_id() %>&amount=<%= order.getAmount() %>"
                               class="btn btn-sm btn-outline-secondary">Editar</a>
-                         <!--<a href="remove-order?id=<%= order.getOrder_id() %>" onclick="return confirm('¿Estás seguro de que quieres eliminar el pedido número <%= order.getOrder_id() %>?')"
-                              class="btn btn-sm btn-outline-danger">Eliminar</a>-->
                             <a href="remove-order?id=<%= order.getOrder_id() %>"
                               class="btn btn-sm btn-outline-danger"
                               onclick="return confirmDelete('<%= order.getOrder_id() %>', <%= order.getOrder_id() %>);">Eliminar</a>

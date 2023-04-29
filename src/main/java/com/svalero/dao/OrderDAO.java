@@ -1,6 +1,5 @@
 package com.svalero.dao;
 
-import com.svalero.domain.Customer;
 import com.svalero.domain.Order;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
@@ -34,6 +33,5 @@ public interface OrderDAO {
 
     @SqlQuery("SELECT * FROM orders WHERE order_id = ? AND amount = ?")
     @UseRowMapper(OrderMapper.class)
-    List<Order> searchOrders(int order_id, int amount);
-
+    List<Order> searchOrders(Integer order_id, Integer amount);
 }

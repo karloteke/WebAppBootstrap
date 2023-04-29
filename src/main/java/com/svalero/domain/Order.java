@@ -1,7 +1,6 @@
 package com.svalero.domain;
 
 import lombok.*;
-
 import java.time.LocalDate;
 @Data
 @RequiredArgsConstructor

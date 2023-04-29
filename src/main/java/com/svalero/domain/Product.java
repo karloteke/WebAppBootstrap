@@ -1,7 +1,6 @@
 package com.svalero.domain;
 
 import lombok.*;
-
 import java.math.BigDecimal;
 
 @Data

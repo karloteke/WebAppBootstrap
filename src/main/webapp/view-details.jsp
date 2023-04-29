@@ -19,7 +19,6 @@
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-
 <div class="container">
     <div class="card mb-3 style">
       <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>

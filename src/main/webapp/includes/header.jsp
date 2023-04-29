@@ -73,18 +73,13 @@
         width: 100%;
       }
       .style{
-        width: 500px;
+        width: 478px;
         margin: 25px auto;
       }
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-      }
-      html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
       }
       body {
        background: linear-gradient(to bottom, #8E2DE2, #FFF);

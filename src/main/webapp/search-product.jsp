@@ -11,7 +11,6 @@
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-
 <div class="container">
    <h1>Producto</h1>
       <table class="table">

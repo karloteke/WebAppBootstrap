@@ -1,8 +1,6 @@
 package com.svalero.dao;
 
 import com.svalero.domain.Customer;
-import com.svalero.domain.Order;
-import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.statement.UseRowMapper;
@@ -28,13 +26,7 @@ public interface CustomerDAO {
     @SqlUpdate("UPDATE customers SET first_name = ?, last_name = ?, adress = ?, phone = ?, image = ? WHERE customer_id = ?")
     void editCustomer(String firstName, String lastName, String adress, String phone, String image, int customer_id);
 
-    /*@SqlQuery("SELECT * FROM customers WHERE first_name = ? AND last_name = ?")
-    @UseRowMapper(CustomerMapper.class)
-    List<Customer> searchCustomers(String firstName, String lastName);*/
-
     @SqlQuery("SELECT * FROM customers WHERE first_name LIKE CONCAT('%', ?, '%') AND last_name LIKE CONCAT('%', ?, '%')")
     @UseRowMapper(CustomerMapper.class)
     List<Customer> searchCustomers(String firstName, String lastName);
-
-
 }
