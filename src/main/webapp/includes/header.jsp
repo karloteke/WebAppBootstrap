@@ -1,14 +1,9 @@
-
-<!DOCTYPE html>
-<html lang="es">
+<head>
     <%@page contentType="text/html"%>
     <%@page pageEncoding="UTF-8"%>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-
     <title>Tienda WebApp</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!--Librería jquery para utilizar javaScript -->
@@ -16,7 +11,6 @@
 
     <!-- Favicons -->
     <meta name="theme-color" content="#712cf9">
-
 
     <style>
       .bd-placeholder-img {
@@ -72,17 +66,28 @@
       .table-responsive {
         width: 100%;
       }
-      .style{
-        width: 478px;
-        margin: 25px auto;
+      .card-custom{
+        width: 459px;
+        margin: 0 auto;
       }
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
       }
-      body {
-       background: linear-gradient(to bottom, #8E2DE2, #FFF);
+      .mh-custom{
+        min-height: 88vh;
+      }
+      .custom-gradient {
+        background: linear-gradient(to bottom, #8E2DE2, #FFF);
+      }
+      .p-25{
+        padding:25px;
+      }
+      .pt-25{
+        padding-top:25px;
+        padding-bottom: 25px;
       }
       .navbar-brand img {
         height: 40px;
@@ -90,15 +95,16 @@
       .navbar-brand {
         margin-right: 10px;
       }
-      .bg-purple {
-        background: linear-gradient(to bottom, #8E2DE2, #FFF);
-      }
       .bg-white {
         background-color: #FFFFFF ;
       }
       .navbar {
         background-color: #D1A9F3;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .profile-image{
+        width: 475px;
+        height: 475px;
       }
        /* Regla para todas las tablas, excepto la tabla con id "no-seleccionable" */
       .table tbody tr:not(:first-child):hover {
@@ -108,9 +114,8 @@
        #no-seleccionable tbody tr:hover {
        background-color: transparent;
       }
-
     </style>
-
+</head>
  <nav class="navbar navbar-expand-lg">
    <div class="container-fluid ">
      <a class="navbar-brand" href="#">
@@ -135,4 +140,3 @@
      </div>
    </div>
  </nav>
-<html>

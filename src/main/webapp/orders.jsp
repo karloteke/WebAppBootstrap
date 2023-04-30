@@ -17,7 +17,7 @@
     <%@page pageEncoding="UTF-8"%>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 
-  <section class="py-5 text-center container">
+  <section class="py-5 text-center custom-gradient">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
                  <form action="search-order" method="GET" class="mb-3">

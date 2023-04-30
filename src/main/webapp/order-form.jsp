@@ -1,5 +1,7 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+
 <%@include file="includes/header.jsp"%>
-<main>
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -38,9 +40,9 @@
 
 %>
 
-<div class="container">
-    <br>
-    <nav aria-label="breadcrumb">
+<body class="custom-gradient">
+    <div class="container">
+        <nav aria-label="breadcrumb" class="pt-25">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page">Registrar pedido</li>

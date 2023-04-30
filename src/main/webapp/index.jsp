@@ -18,7 +18,7 @@
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-  <section class="py-5 text-center container">
+  <section class="py-5 text-center custom-gradient">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
              <form action="search-customer" method="GET" class="mb-3">
