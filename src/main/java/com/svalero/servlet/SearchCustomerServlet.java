@@ -36,10 +36,12 @@ public class SearchCustomerServlet extends HttpServlet {
                 customers = Database.jdbi.withExtension(CustomerDAO.class, dao -> {
                     return dao.searchCustomers(firstName, lastName);
                 });
+
             } else if (firstName != null) {
                 customers = Database.jdbi.withExtension(CustomerDAO.class, dao -> {
                     return dao.searchCustomers(firstName, "");
                 });
+
             } else {
                 customers = Database.jdbi.withExtension(CustomerDAO.class, dao -> {
                     return dao.searchCustomers("", lastName);
