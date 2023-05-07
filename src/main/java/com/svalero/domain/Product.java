@@ -1,22 +1,23 @@
 package com.svalero.domain;
 
 import lombok.*;
+import java.math.BigDecimal;
 
 @Data
 @RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Customer {
+public class Product {
 
-    private int customer_id;
+    private int product_id;
     @NonNull
-    private String firstName;
+    private String name;
     @NonNull
-    private String lastName;
+    private String description;
     @NonNull
-    private String adress;
-    @NonNull
-    private String phone;
+    private BigDecimal price;
     @NonNull
     private String image;
+
 }

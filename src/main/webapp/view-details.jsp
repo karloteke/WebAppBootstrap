@@ -2,9 +2,9 @@
 <%@ page import="com.svalero.dao.Database" %>
 <%@ page import="com.svalero.dao.CustomerDAO" %>
 <%@ page import="com.svalero.domain.Customer" %>
+<%@ page contentType="text/html"%>
+<%@ page pageEncoding="UTF-8"%>
 
-<%@include file="includes/header.jsp"%>
-<main>
 <%
     int customerId =Integer.parseInt(request.getParameter("id"));
     Class.forName("com.mysql.cj.jdbc.Driver");
@@ -12,27 +12,21 @@
     Customer customer = Database.jdbi.withExtension(CustomerDAO.class, dao -> dao.getCustomer(customerId));
 %>
 
-<div class="container">
-    <div class="card mb-3">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%= customer.getFirstName() %> <%= customer.getLastName() %></h5>
-        <p class="card-text"><%= customer.getAdress() %></p>
-        <p class="card-text"><small class="text-muted"><%= customer.getPhone() %></small></p>
-      </div>
+
+<%@include file="includes/header.jsp"%>
+<main class="custom-gradient p-25">
+    <div class="card-custom">
+        <div class="card mb-3">
+          <img src="../tienda_data/<%= customer.getImage() %>" class="bd-placeholder-img card-img-top"/>
+          <div class="card-body d-flex flex-column align-items-center">
+            <h4 class="card-title" ><%= customer.getFirstName() %> <%= customer.getLastName() %></h4>
+            <p class="card-text" >Dirección: <%= customer.getAdress() %></p>
+            <p class="card-text" >Teléfono: <%= customer.getPhone() %></p>
+            <p class="card-text" >Id cliente: <%= customer.getCustomer_id() %></p>
+          </div>
+        </div>
     </div>
-</div>
-
-<!-- PAGINACIÓN REVISAR PUNTO EXTRA -->
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
-
 </main>
-<%@include file="includes/footer.jsp"%>
+
+
+
