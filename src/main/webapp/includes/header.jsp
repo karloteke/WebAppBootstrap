@@ -1,25 +1,16 @@
-<!doc type html>
-<html lang="es">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <%@page contentType="text/html"%>
+    <%@page pageEncoding="UTF-8"%>
     <title>Tienda WebApp</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!--Librería jquery para utilizar javaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
     <meta name="theme-color" content="#712cf9">
-
 
     <style>
       .bd-placeholder-img {
@@ -72,42 +63,80 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      .table-responsive {
+        width: 100%;
+      }
+      .card-custom{
+        width: 459px;
+        margin: 0 auto;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .mh-custom{
+        min-height: 88vh;
+      }
+      .custom-gradient {
+        background: linear-gradient(to bottom, #8E2DE2, #FFF);
+      }
+      .p-25{
+        padding:25px;
+      }
+      .pt-25{
+        padding-top:25px;
+        padding-bottom: 25px;
+      }
+      .navbar-brand img {
+        height: 40px;
+      }
+      .navbar-brand {
+        margin-right: 10px;
+      }
+      .bg-white {
+        background-color: #FFFFFF ;
+      }
+      .navbar {
+        background-color: #D1A9F3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .profile-image{
+        width: 475px;
+        height: 475px;
+      }
+       /* Regla para todas las tablas, excepto la tabla con id "no-seleccionable" */
+      .table tbody tr:not(:first-child):hover {
+        background-color: #ECDBFA;
+      }
+      /* Regla específica para la tabla con id "no-seleccionable" */
+       #no-seleccionable tbody tr:hover {
+       background-color: transparent;
+      }
     </style>
-
-
-  </head>
-  <body>
-
-<header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Gestión de tienda de maquillaje</h4>
-           <p class="text-body-secondary">SOMOS UNA MARCA JOVEN DE BELLEZA CON SEDE EN ZARAGOZA, ESPAÑA. CREEMOS QUE EL MAQUILLAJE DEBERÍA SER DIVERTIDO Y SIN COMPLICACIONES.
-            Nuestros productos son veganos y cruelty-free</p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contacto</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Tienda WebApp</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+</head>
+ <nav class="navbar navbar-expand-lg">
+   <div class="container-fluid ">
+     <a class="navbar-brand" href="#">
+           <img src="../tienda_data/Pintalabios.jpg" alt="Logo de la tienda">
+           Gestión tienda de maquillaje
+         </a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
+         <li class="nav-item">
+           <a class="nav-link" href="/tienda/index.jsp">Clientes</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/tienda/orders.jsp">Pedidos</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/tienda/products.jsp">Productos</a>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </nav>
