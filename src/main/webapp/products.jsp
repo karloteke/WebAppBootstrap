@@ -23,25 +23,25 @@
   <section class="py-5 text-center custom-gradient">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-                 <form action="search-product" method="GET" class="mb-3">
-                     <div class="row">
-                         <div class="col">
-                             <input type="text" name="name" class="form-control" placeholder="Nombre">
-                         </div>
-                         <div class="col">
-                             <input type="text" name="description" class="form-control" placeholder="Descripción">
-                         </div>
-                         <div class="col-auto">
-                             <button type="submit" class="btn btn-dark">Buscar productos</button>
-                         </div>
-                     </div>
-                 </form>
-                 <br>
-        <h1 class="fw-light">Gestión de productos</h1>
-        <br>
-        <p>
+         <form action="search-product" method="GET" class="mb-3">
+             <div class="row">
+                 <div class="col">
+                     <input type="text" name="name" class="form-control" placeholder="Nombre">
+                 </div>
+                 <div class="col">
+                     <input type="text" name="description" class="form-control" placeholder="Descripción">
+                 </div>
+                 <div class="col-auto">
+                     <button type="submit" class="btn btn-dark">Buscar productos</button>
+                 </div>
+             </div>
+         </form>
+         <br>
+         <h1 class="fw-light">Gestión de productos</h1>
+         <br>
+         <p>
            <a href="product-form.jsp?action=Registrar" class="btn btn-outline-dark">Registrar nuevo producto</a>
-        </p>
+         </p>
       </div>
     </div>
   </section>
@@ -83,21 +83,21 @@
        </div>
 
 <script>
-function confirmDelete(name, productId) {
-  swal({
-     title: "¿Estás seguro que deseas eliminar el producto " + name + "?",
-     text: "Se eliminaran todos los pedidos con ese id de producto",
-     icon: "warning",
-     buttons: ["Cancelar", "Eliminar"],
-     dangerMode: true,
-  })
-  .then((willDelete) => {
-     if (willDelete) {
-        window.location.href = "remove-product?id=" + productId;
-     }
-  });
-  return false;
-}
+    function confirmDelete(name, productId) {
+      swal({
+         title: "¿Estás seguro que deseas eliminar el producto " + name + "?",
+         text: "Se eliminaran todos los pedidos con ese id de producto",
+         icon: "warning",
+         buttons: ["Cancelar", "Eliminar"],
+         dangerMode: true,
+      })
+      .then((willDelete) => {
+         if (willDelete) {
+            window.location.href = "remove-product?id=" + productId;
+         }
+      });
+      return false;
+    }
 </script>
 
 </main>

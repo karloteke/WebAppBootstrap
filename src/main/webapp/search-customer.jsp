@@ -3,7 +3,6 @@
 <%@ page contentType="text/html"%>
 <%@ page pageEncoding="UTF-8"%>
 
-
 <%@include file="includes/header.jsp"%>
 <body class="custom-gradient">
   <div class="container pt-25">

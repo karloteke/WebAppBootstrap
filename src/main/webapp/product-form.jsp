@@ -44,13 +44,13 @@
 
 <body class="custom-gradient">
     <div class="container">
-        <nav aria-label="breadcrumb" class="pt-25">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Registrar producto</li>
-      </ol>
-    </nav>
-     <form class="row g-3" method = "post" action = "edit-product" enctype="multipart/form-data">
+      <nav aria-label="breadcrumb" class="pt-25">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.jsp" style="color: black;">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Registrar producto</li>
+          </ol>
+      </nav>
+      <form class="row g-3" method = "post" action = "edit-product" enctype="multipart/form-data">
         <div class="col-md-6">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="name" value='<%= name %>'>
@@ -80,11 +80,10 @@
         <div class="col-12">
             <input type="submit" class="btn btn-dark" value="<%= buttonText %>"/>
         </div>
-    </form>
-    <br>
-    <div id="result"></div>
-</div>
-</main>
+      </form>
+      <br>
+      <div id="result"></div>
+    </div>
 </html>
 
 
